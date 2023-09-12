@@ -1,0 +1,24 @@
+<h1>Form with form control</h1>
+
+<form (ngSubmit)="onSubmitForm()" [formGroup]="loginForm">
+
+    <div class="">
+        <label for="username">Username : </label>
+        <input type="text" id="username" [formControl]="username" formControlName="username">
+        <div class="has-error" *ngIf="username.invalid">
+            {{ (username.getError('required') ? 'This field is required' : '') }}
+            {{ (username.getError('minlength') ? 'Please enter minimun 5 charactes' : '') }}
+        </div>
+    
+        <!-- <div class="has-error" *ngIf="username.errors?.['required']">This field is required</div>
+        <div class="has-error" *ngIf="username.errors?.['minlength']">Please enter minimun 5 charactes</div> -->
+    </div>
+
+    <div class="">
+        <label for="password">Paswword : </label>
+        <input type="password" id="password" [formControl]="password" formControlName="password">
+        <div class="has-error" *ngIf="password.errors?.['required']">This field is required</div>
+    </div>
+    <button type="submit" [disabled]="username.invalid || password.invalid">Send username</button>
+    <button type="submit" [disabled]="loginForm.invalid">Send username</button>
+</form>

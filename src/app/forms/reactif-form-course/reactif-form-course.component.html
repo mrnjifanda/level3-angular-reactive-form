@@ -1,0 +1,22 @@
+<div class="">
+    <form [formGroup]="reactifForm">
+        <div class="">
+            <label for="username">Username :</label>
+            <input type="text" id="username" formControlName="username">
+        </div>
+        <div class="">
+            <label for="email">Email :</label>
+            <input type="email" id="email" formControlName="email">
+        </div>
+        <div class="">
+            <label for="password">Password :</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        
+        <div class="">
+            <button type="submit" (click)="onSubmitForm()">Submit</button>
+        </div>
+
+
+    </form>
+</div>

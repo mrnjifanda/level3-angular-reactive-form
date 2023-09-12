@@ -1,0 +1,22 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appareil of appareils">
+            <td>{{appareil.name}}</td>
+            <td>{{appareil.quantity}}</td>
+            <!-- <td [ngClass]="appareil.status == 'available' ? 'green' : 'red'">{{appareil.status}}</td> -->
+            <td
+                [class.green]="appareil.status == 'available'"
+                [class.red]="appareil.status == 'not available'"
+            >{{appareil.status}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" (click)="addNewItem('top')">Ajouter à la liste de ses parents</button>
