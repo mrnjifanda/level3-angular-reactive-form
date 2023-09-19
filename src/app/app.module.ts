@@ -12,6 +12,9 @@ import { AgeComponent } from './children/age/age.component';
 import { ReactifFormCourseComponent } from './forms/reactif-form-course/reactif-form-course.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControlComponent } from './forms/form-control/form-control.component';
+import { CatsComponent } from './API/cats/cats.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SingleCatsComponent } from './API/single-cats/single-cats.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { FormControlComponent } from './forms/form-control/form-control.componen
     SentToParentComponent,
     AgeComponent,
     ReactifFormCourseComponent,
-    FormControlComponent
+    FormControlComponent,
+    CatsComponent,
+    SingleCatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
